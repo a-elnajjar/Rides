@@ -7,9 +7,7 @@
 
 import Foundation
 
-
 class VehicleListViewModel: ObservableObject {
-
 	enum SortOption: String, CaseIterable {
 		case vin = "VIN"
 		case carType = "Car Type"
@@ -17,19 +15,26 @@ class VehicleListViewModel: ObservableObject {
 
 	@Published var vehicles: [Vehicle] = []
 	@Published var inputCount: String = ""
-	@Published var selectedSortOption: SortOption = .vin {
-		didSet {
-			sortVehicles()
-		}
-	}
+	@Published var selectedSortOption: SortOption = .vin
 
 	private let vehicleService = VehicleService()
+
+	
+	func isValidInput() -> Bool {
+		if let count = Int(inputCount), (1...100).contains(count) {
+			return true
+		}
+		return false
+	}
+
 	
 	func fetchVehicles() {
-		guard let count = Int(inputCount), count > 0 else {
+		guard isValidInput() else {
 			print("Invalid input")
 			return
 		}
+
+		guard let count = Int(inputCount) else { return }
 
 		vehicleService.fetchVehicles(count: count) { [weak self] result in
 			DispatchQueue.main.async {
