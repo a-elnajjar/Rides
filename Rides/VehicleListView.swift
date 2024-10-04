@@ -31,6 +31,9 @@ struct VehicleListView: View {
 					}
 					.pickerStyle(SegmentedPickerStyle())
 					.padding()
+					.onChange(of: viewModel.selectedSortOption) { _ in
+						viewModel.sortVehicles()
+					}
 				}
 				.padding()
 
