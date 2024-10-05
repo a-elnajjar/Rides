@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// Create a ViewModifier to encapsulate the card style
+
 struct CardStyleModifier: ViewModifier {
 	func body(content: Content) -> some View {
 		content
@@ -17,11 +17,11 @@ struct CardStyleModifier: ViewModifier {
 					.fill(Color.white)
 					.shadow(color: .gray, radius: 5, x: 0, y: 5)
 			)
-			.padding() // Outer padding for spacing around the card
+			.padding()
 	}
 }
 
-// Create a View extension to make it easy to apply the modifier
+
 extension View {
 	func applyCardStyle() -> some View {
 		self.modifier(CardStyleModifier())

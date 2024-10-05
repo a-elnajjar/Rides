@@ -19,8 +19,9 @@ struct VehicleDetailView: View {
 				CarbonEmissionsView(vehicle: vehicle)
 					.tag(1)
 			}
-			.tabViewStyle(PageTabViewStyle()) // Enables swipe between views
-			.indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always)) // Shows page dots
+			.tabViewStyle(PageTabViewStyle())
+			
+			.indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always)) 
 		}
 		.navigationTitle("Vehicle Details")
 		.navigationBarTitleDisplayMode(.inline)
