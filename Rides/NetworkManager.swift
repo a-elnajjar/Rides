@@ -50,3 +50,30 @@ class NetworkManager {
 			.eraseToAnyPublisher()
 	}
 }
+
+extension NetworkManager {
+	/// Generic API call function using async/await
+	/// - Parameters:
+	///   - urlString: The URL string for the request.
+	///   - responseType: The type to decode the response into.
+	/// - Returns: The decoded response of type `T` or throws a `NetworkError`.
+	func fetchData<T: Decodable>(
+		from urlString: String,
+		responseType: T.Type
+	) async throws -> T {
+		guard let url = URL(string: urlString) else {
+			throw NetworkError.invalidURL
+		}
+		
+		do {
+			let (data, _) = try await URLSession.shared.data(from: url)
+			do {
+				return try JSONDecoder().decode(T.self, from: data)
+			} catch {
+				throw NetworkError.decodingError(error)
+			}
+		} catch {
+			throw NetworkError.networkError(error)
+		}
+	}
+}
