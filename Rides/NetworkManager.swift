@@ -7,73 +7,42 @@
 
 
 import Foundation
-import Combine
 
-enum NetworkError: Error {
-	case invalidURL
-	case networkError(Error)
-	case dataCorrupted
-	case decodingError(Error)
+enum NetworkError: Error, LocalizedError {
+    case invalidURL
+    case networkError(Error)
+    case decodingError(Error)
+    
+    var errorDescription: String? {
+        switch self {
+        case .invalidURL:
+            return "The URL provided was invalid."
+        case .networkError(let error):
+            return "Network error: \(error.localizedDescription)"
+        case .decodingError(let error):
+            return "Failed to decode response: \(error.localizedDescription)"
+        }
+    }
 }
 
 class NetworkManager {
-	static let shared = NetworkManager() // Singleton for global access
-	private init() {} // Private initializer to prevent instantiation
-
-	/// Generic API call function using Combine
-	/// - Parameters:
-	///   - urlString: The URL string for the request.
-	///   - responseType: The type to decode the response into.
-	/// - Returns: A publisher that emits the decoded response or an error.
-	func fetchData<T: Decodable>(
-		from urlString: String,
-		responseType: T.Type
-	) -> AnyPublisher<T, NetworkError> {
-		guard let url = URL(string: urlString) else {
-			return Fail(error: NetworkError.invalidURL).eraseToAnyPublisher()
-		}
-
-		return URLSession.shared.dataTaskPublisher(for: url)
-			.tryMap { data, _ -> T in
-				do {
-					return try JSONDecoder().decode(T.self, from: data)
-				} catch {
-					throw NetworkError.decodingError(error)
-				}
-			}
-			.mapError { error -> NetworkError in
-				if let networkError = error as? NetworkError {
-					return networkError
-				}
-				return .networkError(error)
-			}
-			.eraseToAnyPublisher()
-	}
-}
-
-extension NetworkManager {
-	/// Generic API call function using async/await
-	/// - Parameters:
-	///   - urlString: The URL string for the request.
-	///   - responseType: The type to decode the response into.
-	/// - Returns: The decoded response of type `T` or throws a `NetworkError`.
-	func fetchData<T: Decodable>(
-		from urlString: String,
-		responseType: T.Type
-	) async throws -> T {
-		guard let url = URL(string: urlString) else {
-			throw NetworkError.invalidURL
-		}
-		
-		do {
-			let (data, _) = try await URLSession.shared.data(from: url)
-			do {
-				return try JSONDecoder().decode(T.self, from: data)
-			} catch {
-				throw NetworkError.decodingError(error)
-			}
-		} catch {
-			throw NetworkError.networkError(error)
-		}
-	}
+    static let shared = NetworkManager()
+    private init() {}
+    
+    func fetchData<T: Decodable>(
+        from urlString: String,
+        responseType: T.Type
+    ) async throws -> T {
+        guard let url = URL(string: urlString) else {
+            throw NetworkError.invalidURL
+        }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        
+        do {
+            return try JSONDecoder().decode(T.self, from: data)
+        } catch {
+            throw NetworkError.decodingError(error)
+        }
+    }
 }
