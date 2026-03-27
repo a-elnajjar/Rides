@@ -7,17 +7,149 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "471B57B3-DD81-4A2B-81FC-E3F1FC32110B"
+            uuid = "99DE9BE8-5170-41D8-A9DD-8A56A529726A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Rides/VehicleListView.swift"
+            filePath = "Rides/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "50"
+            endingLineNumber = "50">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FA910DF8-4536-4494-AFBA-BF1424DACF52"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rides/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "fetchData(from:responseType:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FA910DF8-4536-4494-AFBA-BF1424DACF52 - f009fa07b44c7b13"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rides.NetworkManager.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(from: Swift.String, responseType: &#x3c4;_0_0.Type) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Rides.NetworkError&gt;"
+                  moduleName = "Rides.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a-elnajjar/Desktop/untitled%20folder/Rides/Rides/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46">
+               </Location>
+               <Location
+                  uuid = "FA910DF8-4536-4494-AFBA-BF1424DACF52 - 822d93ecaefe80df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; Rides.NetworkError in Rides.NetworkManager.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(from: Swift.String, responseType: &#x3c4;_0_0.Type) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Rides.NetworkError&gt;"
+                  moduleName = "Rides.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a-elnajjar/Desktop/untitled%20folder/Rides/Rides/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46">
+               </Location>
+               <Location
+                  uuid = "FA910DF8-4536-4494-AFBA-BF1424DACF52 - 1c57dcb222f82d8e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Rides.NetworkManager.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(from: Swift.String, responseType: &#x3c4;_0_0.Type) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Rides.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a-elnajjar/Desktop/untitled%20folder/Rides/Rides/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47">
+               </Location>
+               <Location
+                  uuid = "FA910DF8-4536-4494-AFBA-BF1424DACF52 - f3f9ee652b91e990"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Rides.NetworkManager.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(from: Swift.String, responseType: &#x3c4;_0_0.Type) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Rides.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a-elnajjar/Desktop/untitled%20folder/Rides/Rides/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47">
+               </Location>
+               <Location
+                  uuid = "FA910DF8-4536-4494-AFBA-BF1424DACF52 - a75118beb73d4b93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Rides.NetworkManager.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(from: Swift.String, responseType: &#x3c4;_0_0.Type) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Rides.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a-elnajjar/Desktop/untitled%20folder/Rides/Rides/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7DBB8ECD-2459-45C4-A5D5-B120F88D615A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rides/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "fetchData(from:responseType:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7DBB8ECD-2459-45C4-A5D5-B120F88D615A - f009fa07b44c789f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rides.NetworkManager.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(from: Swift.String, responseType: &#x3c4;_0_0.Type) -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, Rides.NetworkError&gt;"
+                  moduleName = "Rides.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a-elnajjar/Desktop/untitled%20folder/Rides/Rides/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34">
+               </Location>
+               <Location
+                  uuid = "7DBB8ECD-2459-45C4-A5D5-B120F88D615A - 1c57dcb222f82e02"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Rides.NetworkManager.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(from: Swift.String, responseType: &#x3c4;_0_0.Type) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Rides.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a-elnajjar/Desktop/untitled%20folder/Rides/Rides/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
